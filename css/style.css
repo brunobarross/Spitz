@@ -31,9 +31,10 @@ a {
 }
 
 .container-geral {
-  background-color: #f4efeb;
-  height: 100%;
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #f4efeb;
 }
 
 .container {
@@ -45,13 +46,14 @@ a {
 }
 
 header {
-  padding: 4em 0 4em 0;
+  padding: 64px 0 128px 0;
 }
 
 header nav ul {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin-right: 20px;
 }
 
 header li + li {
@@ -79,15 +81,43 @@ header nav a:hover {
   font-size: 4em;
   font-weight: 700;
   color: #fe0000;
+  margin-left: 20px;
+}
+
+.hamburguer {
+  display: none;
+}
+
+/*MOBILE*/
+
+@media (max-width: 739px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  header nav ul li {
+    display: none;
+  }
+  header {
+    padding: 40px 0 40px 0;
+  }
+  .hamburguer {
+    margin-right: 10px;
+    width: 50px;
+    display: block;
+  }
+
+  .logo a {
+    font-size: 2em;
+    margin-left: 10px;
+  }
 }
 
 .intro-container {
-  max-width: 1200px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-content: center;
-  position: relative;
+  align-items: center;
 }
 
 .texto span {
@@ -118,22 +148,82 @@ header nav a:hover {
   margin: 32px 0 0 0;
 }
 
+@media (max-width: 739px) {
+  .intro-container {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .texto span {
+    font-size: 0.875em;
+  }
+
+  .texto span::after {
+    width: 92px;
+    height: 2px;
+  }
+
+  .texto h1 {
+    margin-top: 8px;
+    font-size: 3em;
+    width: 270px;
+  }
+
+  .texto p {
+    margin-top: 16px;
+    font-size: 1em;
+    width: 250px;
+  }
+
+  .ornamento {
+    margin: 16px 0 0 0;
+    width: 50px;
+  }
+}
+
 .elipse img {
-  width: 450px;
-  height: 450px;
+  width: 35%;
+  height: 100vh;
   position: absolute;
-  right: -220px;
-  top: 64px;
-  z-index: 20;
+  left: 70%;
+  top: 15%;
+}
+
+@media (max-width: 739px) {
+  .elipse img {
+    width: 75%;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+  }
 }
 
 .redes-sociais {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 0 10px;
+  margin-left: 20px;
+}
+
+.redes-sociais-container {
   max-width: 1200px;
   margin: 64px auto 0 auto;
+  display: -webkit-flex;
   display: flex;
-  flex-wrap: wrap;
+  align-content: flex-end;
 }
 
 .redes-sociais img + img {
   margin-left: 16px;
+}
+
+/* ENTRE 740 A */
+
+@media (min-width: 739px) and (max-width: 898px) {
+  header nav a {
+    font-size: ;
+  }
 }
