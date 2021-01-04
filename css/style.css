@@ -53,7 +53,7 @@ header nav ul {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 header li + li {
@@ -81,7 +81,7 @@ header nav a:hover {
   font-size: 4em;
   font-weight: 700;
   color: #fe0000;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .hamburguer {
@@ -205,7 +205,7 @@ header nav a:hover {
   bottom: 0;
   left: 0;
   padding: 0 10px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .redes-sociais-container {
@@ -223,7 +223,25 @@ header nav a:hover {
 /* ENTRE 740 A */
 
 @media (min-width: 739px) and (max-width: 898px) {
-  header nav a {
-    font-size: ;
+  .container {
+    max-width: 100%;
+  }
+
+  header {
+    padding: 64px 0;
+  }
+
+  header li + li {
+    margin-left: 32px;
+  }
+
+  .intro-container {
+    margin-left: 30px;
+  }
+  .elipse img {
+    width: 75%;
+    position: absolute;
+    left: 45%;
+    top: 20%;
   }
 }
