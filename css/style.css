@@ -1,3 +1,5 @@
+/* GERAL*/
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +10,8 @@ h2,
 p,
 ul,
 li,
-a {
+a,
+span {
   padding: 0;
   margin: 0;
 }
@@ -16,6 +19,7 @@ a {
 body {
   font-family: "Roboto", sans-serif;
   overflow: auto;
+  color: #171e26;
 }
 
 li {
@@ -31,29 +35,33 @@ a {
   text-decoration: none;
 }
 
+/* CONTAINER PRINCIPAL*/
+
 header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
   min-height: 100vh;
   background: #f4efeb;
   position: relative;
   overflow: hidden;
 }
+/* FIGURA GEOMÉTRICA */
 
 header::after {
-  content: url("../img/elipse\ \(1\).svg");
+  content: url("../img/elipse-desktop.svg");
   display: block;
   position: absolute;
-  left: 1000px;
-  top: 294px;
+  left: 65%;
+  top: 40%;
 }
 
+/* MENU*/
+
 .nav-menu {
-  padding: 20px 0 64px 0;
-  margin: 0 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: 40px 10px 128px 10px;
+  max-width: 1400px;
+  margin: 0 auto;
   align-items: center;
 }
 
@@ -64,7 +72,7 @@ header::after {
 }
 
 .nav-menu li + li {
-  margin-left: 4em;
+  margin-left: 64px;
 }
 
 .nav-menu li:hover {
@@ -72,22 +80,33 @@ header::after {
   border-bottom: 2px solid #fe0000;
 }
 
+.nav-menu li:hover:nth-child(5) {
+  font-weight: normal;
+  border-bottom: none;
+}
+
+.nav-menu ul li:nth-child(6) {
+  margin-left: 0;
+}
+
 .nav-menu a {
   padding: 5px;
   color: #000;
+  display: block;
 }
 
 a.logo {
-  font-size: 4em;
+  font-size: 64px;
   font-weight: 700;
   color: #fe0000;
+  display: block;
 }
 
 .hamburguer {
   display: none;
 }
 
-/*MOBILE*/
+/*MOBILE MENU*/
 
 @media (max-width: 739px) {
   .nav-menu {
@@ -105,6 +124,15 @@ a.logo {
     display: none;
   }
 
+  .nav-menu ul li:nth-child(6) {
+    display: block;
+  }
+
+  .nav-menu li:hover {
+    font-weight: normal;
+    border-bottom: none;
+  }
+
   .hamburguer {
     margin-right: 10px;
     width: 50px;
@@ -117,45 +145,52 @@ a.logo {
   }
 }
 
+/* INTRO */
+
 .intro-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
+.texto {
+  margin: 0 auto;
+}
 .texto span {
   font-size: 1.125em;
-}
-
-.texto span::after {
-  content: "";
-  width: 116px;
-  display: block;
-  height: 2px;
-  background: #fe0000;
+  border-bottom: 2px solid #fe0000;
 }
 
 .texto h1 {
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 4em;
   max-width: 780px;
 }
 
 .texto p {
+  color: #2e3743;
   margin-top: 32px;
-  font-size: 2em;
+  font-size: 2rem;
   max-width: 700px;
 }
 
 .ornamento {
   margin: 32px 0 0 0;
   display: block;
+  animation: anima 1s ease-in-out infinite;
 }
 
+@keyframes anima {
+  to {
+    opacity: 0.7;
+    transform: scale(1) translateX(20px);
+  }
+}
+
+/* MOBILE INTRO */
 @media (max-width: 739px) {
   .intro-container {
-    padding: 0 px;
-    flex-wrap: wrap;
+    max-width: 100%;
   }
 
   .texto span {
@@ -174,34 +209,59 @@ a.logo {
   }
 
   .texto p {
-    margin-top: 16px;
-    font-size: 1em;
+    margin-top: 32px;
+    font-size: 1.225em;
     width: 250px;
   }
 
   .ornamento {
-    margin: 16px 0 0 0;
+    margin: 32px 0 0 0;
     width: 50px;
   }
 }
 
+/* FOOTER */
 .redes-sociais {
-  padding: 20px 10px;
-  margin-left: 10px;
+  padding: 20px 0;
+  margin-left: 20px;
 }
 
 .redes-sociais-container {
+  max-width: 1400px;
   margin: 64px auto 0 auto;
   display: -webkit-flex;
   display: flex;
-  align-content: flex-end;
 }
 
-.redes-sociais img + img {
+.redes-sociais img {
+  width: 25px;
+}
+
+.redes-sociais a + a {
   margin-left: 16px;
 }
 
-/* ENTRE 740 A 898 */
+/* FOOTER MOBILE*/
+
+@media (max-width: 739px) {
+  .redes-sociais {
+    padding: 20px 10px;
+  }
+
+  .redes-sociais-container {
+    margin: 64px 0 0 0;
+  }
+
+  .redes-sociais img {
+    width: 25px;
+  }
+
+  .redes-sociais a + a {
+    margin-left: 16px;
+  }
+}
+
+/* ENTRE 740 A 898 PARA TABLETS*/
 
 @media (min-width: 739px) and (max-width: 898px) {
   header {
@@ -214,7 +274,8 @@ a.logo {
   }
 
   .nav-menu {
-    padding: 32px 0;
+    padding: 40px 10px 64px 10px;
+    max-width: 1200px;
   }
 
   .nav-menu li + li {
@@ -223,5 +284,12 @@ a.logo {
 
   .intro-container {
     margin-left: 30px;
+  }
+
+  .redes-sociais-container {
+    max-width: 1200px;
+    margin: 64px auto 0 auto;
+    display: -webkit-flex;
+    display: flex;
   }
 }
