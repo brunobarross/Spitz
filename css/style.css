@@ -111,7 +111,7 @@ a.logo {
 @media (max-width: 739px) {
   .nav-menu {
     max-width: 100%;
-    padding: 40px 0 64px 0;
+    padding: 20px 0 64px 0;
     margin: 0 10px;
   }
 
@@ -249,7 +249,7 @@ a.logo {
   }
 
   .redes-sociais-container {
-    margin: 64px 0 0 0;
+    margin: 40px 0 0 0;
   }
 
   .redes-sociais img {
